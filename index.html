@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfólio Cleantho Beltrão</title>
+    <link rel="icon" href="assets/img/monitor.png" type="image/png" />
+    <meta
+      name="description"
+      content="Portfólio de Cleantho Beltrão — Desenvolvedor Python, automação de processos e análise de dados com projetos em Power BI, SQL e soluções automatizadas."
+    />
+
+    <meta property="og:title" content="Cleantho Beltrão | Automação & Dados" />
+    <meta
+      property="og:description"
+      content="Projetos reais em Python, Power BI, automações e análise de dados."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="author" content="Cleantho Beltrão" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "aurora-green": "#00ffaa",
+              "aurora-blue": "#00aaff",
+              "aurora-purple": "#aa00ff",
+              "aurora-pink": "#ff00aa",
+              "dark-bg": "#0a0e1a",
+              "dark-card": "#1a1f2e",
+              "dark-border": "#2a2f3e",
+            },
+            animation: {
+              aurora: "aurora 15s ease-in-out infinite",
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s ease-in-out infinite",
+              "slide-up": "slideUp 0.5s ease-out",
+              glow: "glow 2s ease-in-out infinite",
+            },
+            keyframes: {
+              aurora: {
+                "0%, 100%": {
+                  backgroundPosition: "0% 50%",
+                  backgroundSize: "200% 200%",
+                },
+                "50%": {
+                  backgroundPosition: "100% 50%",
+                  backgroundSize: "200% 200%",
+                },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              glow: {
+                "0%, 100%": {
+                  boxShadow:
+                    "0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)",
+                },
+                "50%": {
+                  boxShadow:
+                    "0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Aurora gradient background */
+      .aurora-bg {
+        background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
+        background-size: 400% 400%;
+        animation: aurora 15s ease infinite;
+      }
+
+      /* Aurora light effect overlay */
+      .aurora-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background:
+          radial-gradient(
+            ellipse at top left,
+            rgba(0, 255, 170, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at top right,
+            rgba(0, 170, 255, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at bottom left,
+            rgba(170, 0, 255, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at bottom right,
+            rgba(255, 0, 170, 0.1) 0%,
+            transparent 40%
+          );
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0a0e1a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #00ffaa, #00aaff);
+        border-radius: 5px;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #00ffaa 0%,
+          #00aaff 50%,
+          #aa00ff 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Card hover effect */
+      .card-hover {
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+
+      .card-hover:hover {
+        border-color: #00ffaa;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
+      }
+
+      /* Progress bar animation */
+      @keyframes progressAnimation {
+        0% {
+          width: 0%;
+        }
+      }
+
+      .progress-bar {
+        animation: progressAnimation 2s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-dark-bg text-gray-200 aurora-bg">
+    <!-- Aurora overlay effect -->
+    <div class="aurora-overlay"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50"
+    >
+      <div class="container mx-auto px-6 py-3">
+        <!-- Header -->
+        <div class="flex items-center justify-between">
+          <!-- Espaço / logo (mobile) -->
+          <div class="w-8 md:hidden"></div>
+
+          <!-- Menu desktop centralizado -->
+          <div class="flex-1 hidden md:flex justify-center">
+            <ul class="flex space-x-8">
+              <li>
+                <a href="#home" class="hover:text-aurora-green transition"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a href="#skills" class="hover:text-aurora-green transition"
+                  >Habilidades</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-aurora-green transition"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio" class="hover:text-aurora-green transition"
+                  >Portfólio</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-aurora-green transition"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Botão mobile -->
+          <button class="md:hidden" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+          <a href="#home" class="block py-2 hover:text-aurora-green">Início</a>
+          <a href="#skills" class="block py-2 hover:text-aurora-green"
+            >Habilidades</a
+          >
+          <a href="#services" class="block py-2 hover:text-aurora-green"
+            >Serviços</a
+          >
+          <a href="#portfolio" class="block py-2 hover:text-aurora-green"
+            >Portfólio</a
+          >
+          <a href="#contact" class="block py-2 hover:text-aurora-green"
+            >Contato</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center pt-20 relative"
+    >
+      <div class="container mx-auto px-6 text-center z-10">
+        <div class="animate-slide-up">
+          <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            Olá, sou <span class="gradient-text">Cleantho Beltrão</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-400 mb-8">
+            Desenvolvedor Python | Automação de Processos | Análise de Dados
+          </p>
+          <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
+            Desenvolvo soluções orientadas a dados, automações e dashboards que
+            ajudam empresas a tomar decisões melhores e ganhar produtividade.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#portfolio"
+              class="px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105"
+            >
+              Veja meu trabalho
+            </a>
+          </div>
+          <div class="mt-12 flex justify-center space-x-6">
+            <a
+              href="https://github.com/cleanthob"
+              class="text-2xl hover:text-aurora-green transition"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/cleantho-beltrao/"
+              class="text-2xl hover:text-aurora-blue transition"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Animated particles -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float"
+          style="top: 20%; left: 10%"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float"
+          style="top: 60%; left: 80%; animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float"
+          style="top: 40%; left: 60%; animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float"
+          style="top: 80%; left: 30%; animation-delay: 3s"
+        ></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Sobre mim
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-gray-400 leading-relaxed">
+              Atuo com desenvolvimento de soluções em Python, automações de
+              processos, análise de dados e visualização de informações para
+              apoio à tomada de decisão.
+            </p>
+            <p class="text-gray-400 leading-relaxed">
+              Tenho experiência com SQL, Power BI, Looker Studio e automações
+              que integram arquivos, sistemas e bancos de dados, sempre focando
+              em eficiência e escalabilidade.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-green">30+</div>
+                <div class="text-sm text-gray-400">Projetos entregues</div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-blue">30+</div>
+                <div class="text-sm text-gray-400">Clientes atendidos</div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-purple">2+</div>
+                <div class="text-sm text-gray-400">Anos de experiência</div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-pink">20+</div>
+                <div class="text-sm text-gray-400">Soluções automatizadas</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1"
+            >
+              <div
+                class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/img/user-image.jpg"
+                  alt="Foto de perfil"
+                  class="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Experiências
+        </h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+          <div class="relative pl-8 border-l-2 border-aurora-green">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"
+            ></div>
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-green">
+                  Desenvolvedor Python / Analista de Dados
+                </h3>
+                <span class="text-sm text-gray-400">2023 - Atual</span>
+              </div>
+              <p class="text-gray-300 font-medium mb-2">Freelancer</p>
+              <p class="text-gray-400">
+                Desenvolvimento de automações, coleta de dados, dashboards em
+                Power BI e Looker Studio, além de soluções sob medida para
+                análise e integração de dados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Skills Técnicas
+        </h2>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
+            Linguagens
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+              <i class="fab fa-python text-2xl mb-2 text-aurora-green"></i>
+              <p>Python</p>
+            </div>
+            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+              <i class="fab fa-js text-2xl mb-2 text-aurora-blue"></i>
+              <p>JavaScript</p>
+            </div>
+            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+              <i class="fas fa-database text-2xl mb-2 text-aurora-purple"></i>
+
+              <p>SQL</p>
+            </div>
+            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+              <i class="fas fa-r text-2xl mb-2 text-aurora-pink"></i>
+              <p>R</p>
+            </div>
+          </div>
+
+          <!-- Tools & Others -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
+              Ferramentas
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-docker text-2xl mb-2 text-aurora-green"></i>
+                <p>Docker</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fas fa-chart-pie text-2xl mb-2 text-aurora-blue"></i>
+
+                <p>Power BI</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-git text-2xl mb-2 text-aurora-purple"></i>
+                <p>Git</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fas fa-chart-area text-2xl mb-2 text-aurora-pink"></i>
+                <p>Looker Studio</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Serviços
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <i class="fas fa-chart-line text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Criação de Dashboards</h3>
+            <p class="text-gray-400">
+              Criação de dashboards interativos em Power BI e Looker Studio com
+              foco em indicadores de negócio e tomada de decisão.
+            </p>
+          </div>
+
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-robot text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Automações</h3>
+            <p class="text-gray-400">
+              Automação de tarefas repetitivas, integração de sistemas,
+              manipulação de arquivos e coleta de dados com Python.
+            </p>
+          </div>
+
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-laptop-code text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">
+              Aulas de programação em Python
+            </h3>
+            <p class="text-gray-400">
+              Aulas particulares e mentorias em Python, automação e análise de
+              dados, do básico ao avançado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Portfólio
+        </h2>
+
+        <!-- Seção: Projetos de Análise de Dados -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-6 text-aurora-purple">
+            Projetos de Análise de Dados
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Dashboard DRE -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard DRE</h3>
+                <p class="text-gray-400 mb-4">
+                  Dashboard de DRE com análise de orçado x realizado, resultados
+                  acumulados e visão clara da performance financeira.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiYWQ4ODc0NGEtZjY1Mi00ZWI1LWEzYTAtMzBjOWU4YzRmN2MyIiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard RH -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard RH</h3>
+                <p class="text-gray-400 mb-4">
+                  Indicadores estratégicos de RH como turnover, contratações,
+                  desligamentos e evolução da folha salarial.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiMWQxM2Q4MjAtNzA4MS00MmZiLTkyNDYtMjkyYWRiNDUwZDI4IiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Comercial -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Comercial</h3>
+                <p class="text-gray-400 mb-4">
+                  Visão completa de vendas, lucro, clientes e desempenho
+                  comercial com análises YoY e Pareto 80/20.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiZDcxNWIwMjAtOWZmOS00ODQyLWEyMTEtOTE2ODg4MmM2NDYzIiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Estoque -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Estoque</h3>
+                <p class="text-gray-400 mb-4">
+                  Controle de estoque com análise de custos, margens, produtos
+                  críticos e ranking de vendas.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiZjA5Y2Q1N2UtNmRjOC00OWUyLWIyZDUtZmJiMGNjZDViMjY3IiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Financeiro -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Financeiro</h3>
+                <p class="text-gray-400 mb-4">
+                  Monitoramento financeiro com foco em recebimentos, pagamentos,
+                  lucro acumulado e indicadores MoM e YoY.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiYWU4ZjlhNGUtZTU1My00YTRkLThmZGQtNmIzODRhMzgxNmExIiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Logística -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Logística</h3>
+                <p class="text-gray-400 mb-4">
+                  Análise de custos logísticos, fretes, entregas e eficiência
+                  operacional baseada em dados do SQL Server.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiZmM1M2U3OWQtMGQyNC00YzRlLTlhNjctNTgxMmU2NTdlNGVkIiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard SAC -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard SAC</h3>
+                <p class="text-gray-400 mb-4">
+                  Indicadores de atendimento ao cliente com foco em volume,
+                  tempo de resposta e eficiência da equipe.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiYzkwYjkzZjEtMzIxNC00Njg4LTgzNDktNDNjZWE0ZmU1NTM3IiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Compras -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Compras</h3>
+                <p class="text-gray-400 mb-4">
+                  Gestão de compras com análise de custos, lead time, atrasos e
+                  savings gerados.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiMjE4MDA4ZGYtMDE3NC00NjZkLTlmMzctZDE4Nzk3NGU4YjlkIiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Produção -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dashboard Produção</h3>
+                <p class="text-gray-400 mb-4">
+                  Monitoramento de produção com indicadores de OEE,
+                  produtividade, qualidade e disponibilidade.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Power BI
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://app.powerbi.com/view?r=eyJrIjoiMmNhYWRkNDktMWEyMS00MzNiLWE3MmItNGViMzNmOWEyM2M0IiwidCI6ImEwOTkyNDhiLTEwNDYtNDVlMC04Yjc1LWJlMWYwZWY1ZmQzZiJ9"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard transportadora -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Dashboard Transportadora
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Dashboard de transportadora com indicadores de entregas, tempo
+                  na estrada, valor por entrega e análise por destino.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Looker Studio
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://lookerstudio.google.com/reporting/71092892-b8ef-4c7b-9145-61954e15971b/page/vDw8E"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Dashboard Vendas de Carros
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Dashboard de vendas de carros com análise de faturamento,
+                  lucro, desempenho por loja e por modelo/estado.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Looker Studio
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://lookerstudio.google.com/reporting/fe7eb149-0ccd-409b-baec-8c28e7dbebf1/page/6Hr6E"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Análise de dados com SQL de aluguel de bicicletas
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Este projeto tem como objetivo explorar e analisar uma base de
+                  dados de corridas, utilizando SQL para responder a perguntas
+                  importantes sobre o comportamento dos usuários ao longo do
+                  tempo.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    SQL
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://docs.google.com/presentation/d/1RhevL19DR2oAEr9pL-ZyZF7DzeJqTjYl-YR9LCME8MA/present"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Análise de dados com SQL do e-commerce Olist
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Análise de dados visando explorar informações de vendas,
+                  produtos e clientes para gerar insights úteis ao negócio.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    SQL
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://docs.google.com/presentation/d/1MhbHWj9jds5_Dqb6dpWNo1coUgiLocxWOqdzDOCBS-g/present"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Análise de crédito</h3>
+                <p class="text-gray-400 mb-4">
+                  Este projeto realiza uma análise exploratória de um conjunto
+                  de dados de crédito utilizando Python e bibliotecas populares
+                  para ciência de dados, como Pandas, Matplotlib, Seaborn e
+                  Plotly.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Python
+                  </span>
+                </div>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://github.com/cleanthob/analise-de-credito"
+                    class="text-aurora-green hover:text-aurora-blue transition"
+                    target="_blank"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visualizar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção: Automações -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-6 text-aurora-purple">
+            Automações
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Cadastro de produtos em ERP -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="h-48">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/xfjLUQd70QQ"
+                  title="Apresentação do projeto"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Cadastro de produtos em ERP
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  O projeto visa automatizar o cadastro de produtos em um ERP.
+                  Os dados são extraídos de arquivos Excel e inseridos no ERP.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Python
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coleta de dados de criptomoedas -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="h-48">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/zWMIRfF0pMM"
+                  title="Apresentação do projeto"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Coleta de dados de criptomoedas
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  O projeto visa automatizar a coleta de dados de criptomoedas
+                  do site CoinGecko usando Selenium.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Python
+                  </span>
+                  <span
+                    class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >
+                    SQL
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Envio automatizado de relatórios -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="h-48">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/UFx8uqTqVpI"
+                  title="Apresentação do projeto"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Envio automatizado de relatórios por e-mail
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Automatização do envio de relatórios diários de vendas para os
+                  gerentes, com personalização e integração de dados.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Python
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Busca por ofertas de produtos -->
+            <div
+              class="bg-dark-card rounded-lg overflow-hidden card-hover group"
+            >
+              <div class="h-48">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/MXbGtQ7pkCw"
+                  title="Apresentação do projeto"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Busca por ofertas de produtos
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Automação para buscar ofertas no Google Shopping e Buscapé e
+                  salvar resultados em arquivo Excel.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >
+                    Python
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Contato
+        </h2>
+
+        <div
+          class="max-w-xl mx-auto bg-dark-card p-8 rounded-lg border border-dark-border card-hover text-center"
+        >
+          <p class="text-gray-400 mb-6">
+            Entre em contato para projetos, automações, dashboards ou mentorias.
+          </p>
+
+          <div class="flex items-center justify-center gap-4 text-lg">
+            <i class="fas fa-envelope text-aurora-green text-2xl"></i>
+            <a
+              href="mailto:cleanthobeltrao@gmail.com"
+              class="text-aurora-green hover:text-aurora-blue transition font-semibold"
+            >
+              cleanthobeltrao@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-dark-border">
+      <div class="container mx-auto px-6 text-center">
+        <div class="mb-4">
+          <a
+            href="https://github.com/cleanthob"
+            class="text-2xl mx-2 hover:text-aurora-green transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/cleantho-beltrao/"
+            class="text-2xl mx-2 hover:text-aurora-blue transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+        <p class="text-gray-400">
+          © <span id="year"></span>
+
+          Cleantho Beltrão
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("mobileMenu").classList.add("hidden");
+        });
+      });
+
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-up");
+          }
+        });
+      }, observerOptions);
+
+      // Observe sections for animation
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      function toggleMobileMenu() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
