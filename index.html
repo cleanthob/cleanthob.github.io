@@ -299,6 +299,21 @@
         font-size: clamp(2.25rem, 4vw, 3.5rem);
       }
 
+      .skills-group {
+        margin-top: 2.5rem;
+      }
+
+      .skills-group:first-child {
+        margin-top: 0;
+      }
+
+      .skills-title {
+        display: block;
+        margin: 0 0 1rem;
+        line-height: 1.3;
+        letter-spacing: 0.04em;
+      }
+
       .portfolio-theme p,
       .portfolio-theme li {
         color: var(--muted) !important;
@@ -636,7 +651,7 @@
                 class="bg-dark-card p-4 rounded-lg border border-dark-border"
               >
                 <div class="text-3xl font-bold text-aurora-blue">15+</div>
-                <div class="text-sm text-gray-400">Integrações criadas</div>
+                <div class="text-sm text-gray-400">Soluções criadas</div>
               </div>
               <div
                 class="bg-dark-card p-4 rounded-lg border border-dark-border"
@@ -725,32 +740,33 @@
           Skills Técnicas
         </h2>
 
-        <div>
-          <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
-            Frontend
-          </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fab fa-react text-2xl mb-2 text-aurora-green"></i>
-              <p>React</p>
-            </div>
-            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <span class="tech-mark text-aurora-blue">TS</span>
-              <p>TypeScript</p>
-            </div>
-            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fab fa-html5 text-2xl mb-2 text-aurora-purple"></i>
-              <p>HTML5 / CSS3</p>
-            </div>
-            <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <span class="tech-mark text-aurora-pink">TW</span>
-              <p>Tailwind CSS</p>
+        <div class="space-y-8">
+          <div class="skills-group">
+            <h3 class="skills-title text-xl font-semibold text-aurora-purple">
+              Frontend
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-react text-2xl mb-2 text-aurora-green"></i>
+                <p>React</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <span class="tech-mark text-aurora-blue">TS</span>
+                <p>TypeScript</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-html5 text-2xl mb-2 text-aurora-purple"></i>
+                <p>HTML5 / CSS3</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <span class="tech-mark text-aurora-pink">TW</span>
+                <p>Tailwind CSS</p>
+              </div>
             </div>
           </div>
 
-          <!-- Tools & Others -->
-          <div>
-            <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
+          <div class="skills-group">
+            <h3 class="skills-title text-xl font-semibold text-aurora-purple">
               Backend e Dados
             </h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -775,8 +791,8 @@
             </div>
           </div>
 
-          <div class="mt-8">
-            <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
+          <div class="skills-group">
+            <h3 class="skills-title text-xl font-semibold text-aurora-purple">
               Python, Automação e Ferramentas
             </h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
