@@ -30,6 +30,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom Tailwind Config -->
     <script>
@@ -37,7 +43,7 @@
         theme: {
           extend: {
             colors: {
-              "aurora-green": "#00ffaa",
+              "aurora-green": "#e66a4e",
               "aurora-blue": "#00aaff",
               "aurora-purple": "#aa00ff",
               "aurora-pink": "#ff00aa",
@@ -74,7 +80,7 @@
               glow: {
                 "0%, 100%": {
                   boxShadow:
-                    "0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)",
+                    "0 0 5px rgba(230, 106, 78, 0.5), 0 0 20px rgba(230, 106, 78, 0.3)",
                 },
                 "50%": {
                   boxShadow:
@@ -105,7 +111,7 @@
         background:
           radial-gradient(
             ellipse at top left,
-            rgba(0, 255, 170, 0.15) 0%,
+            rgba(230, 106, 78, 0.15) 0%,
             transparent 40%
           ),
           radial-gradient(
@@ -142,7 +148,7 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #00ffaa, #00aaff);
+        background: linear-gradient(to bottom, #e66a4e, #00aaff);
         border-radius: 5px;
       }
 
@@ -150,7 +156,7 @@
       .gradient-text {
         background: linear-gradient(
           135deg,
-          #00ffaa 0%,
+          #e66a4e 0%,
           #00aaff 50%,
           #aa00ff 100%
         );
@@ -166,9 +172,9 @@
       }
 
       .card-hover:hover {
-        border-color: #00ffaa;
+        border-color: #e66a4e;
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
+        box-shadow: 0 10px 30px rgba(230, 106, 78, 0.2);
       }
 
       /* Progress bar animation */
@@ -181,9 +187,264 @@
       .progress-bar {
         animation: progressAnimation 2s ease-out forwards;
       }
+
+      :root {
+        --paper: #f3eee6;
+        --paper-deep: #e7ddd0;
+        --ink: #243044;
+        --muted: #667085;
+        --teal: #2f5bea;
+        --coral: #e66a4e;
+        --line: #d9cec0;
+        --card: #fffaf2;
+      }
+
+      html {
+        background: var(--paper);
+      }
+
+      body.portfolio-theme,
+      body.portfolio-theme.aurora-bg {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        animation: none;
+      }
+
+      .portfolio-theme .aurora-overlay {
+        z-index: 0;
+        height: 100%;
+        opacity: 0.55;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: linear-gradient(to bottom, black, transparent 72%);
+      }
+
+      .portfolio-theme nav {
+        background: rgba(243, 238, 230, 0.92) !important;
+        border-color: var(--line) !important;
+        box-shadow: 0 1px 0 rgba(36, 48, 68, 0.08);
+      }
+
+      .portfolio-theme nav a,
+      .portfolio-theme nav button {
+        color: var(--ink) !important;
+      }
+
+      .portfolio-theme nav a:hover,
+      .portfolio-theme nav button:hover {
+        color: var(--coral) !important;
+      }
+
+      .site-mark {
+        color: var(--ink) !important;
+        font-family: "DM Mono", monospace;
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      .site-mark span {
+        color: var(--coral);
+      }
+
+      .tech-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid currentColor;
+        border-radius: 0.35rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .portfolio-theme section,
+      .portfolio-theme footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      .portfolio-theme section:nth-of-type(even) {
+        background: rgba(231, 221, 208, 0.68) !important;
+      }
+
+      .portfolio-theme .gradient-text {
+        background: none;
+        color: var(--teal);
+        -webkit-text-fill-color: initial;
+      }
+
+      .portfolio-theme h1,
+      .portfolio-theme h2,
+      .portfolio-theme h3 {
+        color: var(--ink);
+        letter-spacing: -0.035em;
+      }
+
+      .portfolio-theme h1 {
+        max-width: 900px;
+        margin-inline: auto;
+        font-size: clamp(2.75rem, 6vw, 5.5rem);
+        line-height: 0.98;
+      }
+
+      .portfolio-theme h2 {
+        font-size: clamp(2.25rem, 4vw, 3.5rem);
+      }
+
+      .portfolio-theme p,
+      .portfolio-theme li {
+        color: var(--muted) !important;
+      }
+
+      .hero-kicker {
+        margin-bottom: 1.5rem;
+        color: var(--coral) !important;
+        font-family: "DM Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .portfolio-theme #home {
+        min-height: 100svh;
+        padding-top: 9rem !important;
+        padding-bottom: 7rem;
+      }
+
+      .portfolio-theme #home .mt-12 {
+        margin-top: 3.5rem;
+      }
+
+      .portfolio-theme .bg-dark-card,
+      .portfolio-theme .bg-dark-card\/30 {
+        background: var(--card) !important;
+        border-color: var(--line) !important;
+      }
+
+      .portfolio-theme .bg-dark-bg {
+        background: var(--paper-deep) !important;
+      }
+
+      .portfolio-theme .card-hover {
+        border: 1px solid var(--line);
+        box-shadow: 0 8px 24px rgba(36, 48, 68, 0.08);
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease,
+          box-shadow 220ms ease;
+      }
+
+      .portfolio-theme .card-hover:hover {
+        border-color: var(--coral);
+        box-shadow: 0 16px 32px rgba(230, 106, 78, 0.16);
+        transform: translateY(-4px);
+      }
+
+      .portfolio-theme .text-aurora-green {
+        color: var(--coral) !important;
+      }
+
+      .portfolio-theme .text-aurora-blue,
+      .portfolio-theme .text-aurora-purple,
+      .portfolio-theme .text-aurora-pink {
+        color: var(--teal) !important;
+      }
+
+      .portfolio-theme .bg-gradient-to-r,
+      .portfolio-theme .bg-gradient-to-br {
+        background: var(--coral) !important;
+      }
+
+      .portfolio-theme .text-dark-bg {
+        color: #fffaf2 !important;
+      }
+
+      .portfolio-theme .border-dark-border {
+        border-color: var(--line) !important;
+      }
+
+      .portfolio-theme .font-mono,
+      .portfolio-theme code {
+        font-family: "DM Mono", monospace;
+      }
+
+      .portfolio-theme ::-webkit-scrollbar-track {
+        background: var(--paper);
+      }
+
+      .portfolio-theme ::-webkit-scrollbar-thumb {
+        background: var(--coral);
+        border-radius: 0;
+      }
+
+      @media (max-width: 767px) {
+        .portfolio-theme #home {
+          min-height: 100svh;
+          padding-top: 6.5rem !important;
+          padding-bottom: 1.25rem;
+        }
+
+        .portfolio-theme h1 {
+          font-size: clamp(1.8rem, 8vw, 2.9rem);
+          line-height: 0.95;
+          margin-bottom: 0.75rem;
+        }
+
+        .portfolio-theme #home .hero-kicker {
+          margin-bottom: 0.75rem;
+        }
+
+        .portfolio-theme #home .text-xl {
+          font-size: 1rem;
+          line-height: 1.35;
+          margin-bottom: 1rem;
+        }
+
+        .portfolio-theme #home .text-lg {
+          font-size: 0.95rem;
+          line-height: 1.4;
+          margin-bottom: 1.25rem;
+        }
+
+        .portfolio-theme #home .mt-12 {
+          margin-top: 1.25rem;
+        }
+
+        .portfolio-theme #home .px-8 {
+          padding-block: 0.7rem;
+        }
+
+        .portfolio-theme nav .container {
+          padding-inline: 1.25rem;
+        }
+      }
+
+      @media (max-height: 700px) {
+        .portfolio-theme #home {
+          padding-top: 5.75rem !important;
+          padding-bottom: 0.75rem;
+        }
+
+        .portfolio-theme #home .text-lg {
+          max-width: 34rem;
+          margin-bottom: 0.9rem;
+        }
+
+        .portfolio-theme #home .mt-12 {
+          margin-top: 0.9rem;
+        }
+      }
     </style>
   </head>
-  <body class="bg-dark-bg text-gray-200 aurora-bg">
+  <body class="bg-dark-bg text-gray-200 aurora-bg portfolio-theme">
     <!-- Aurora overlay effect -->
     <div class="aurora-overlay"></div>
 
@@ -194,8 +455,9 @@
       <div class="container mx-auto px-6 py-3">
         <!-- Header -->
         <div class="flex items-center justify-between">
-          <!-- Espaço / logo (mobile) -->
-          <div class="w-8 md:hidden"></div>
+          <a href="#home" class="site-mark" aria-label="Cleantho Beltrão">
+            CB<span>/</span>
+          </a>
 
           <!-- Menu desktop centralizado -->
           <div class="flex-1 hidden md:flex justify-center">
@@ -286,6 +548,7 @@
     >
       <div class="container mx-auto px-6 text-center z-10">
         <div class="animate-slide-up">
+          <p class="hero-kicker">Full Stack Developer · Dados · Automação</p>
           <h1 class="text-5xl md:text-7xl font-bold mb-4">
             Olá, sou <span class="gradient-text">Cleantho Beltrão</span>
           </h1>
@@ -468,20 +731,19 @@
           </h3>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fab fa-python text-2xl mb-2 text-aurora-green"></i>
+              <i class="fab fa-react text-2xl mb-2 text-aurora-green"></i>
               <p>React</p>
             </div>
             <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fab fa-js text-2xl mb-2 text-aurora-blue"></i>
+              <span class="tech-mark text-aurora-blue">TS</span>
               <p>TypeScript</p>
             </div>
             <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fas fa-database text-2xl mb-2 text-aurora-purple"></i>
-
+              <i class="fab fa-html5 text-2xl mb-2 text-aurora-purple"></i>
               <p>HTML5 / CSS3</p>
             </div>
             <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-              <i class="fas fa-r text-2xl mb-2 text-aurora-pink"></i>
+              <span class="tech-mark text-aurora-pink">TW</span>
               <p>Tailwind CSS</p>
             </div>
           </div>
@@ -493,20 +755,21 @@
             </h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                <i class="fab fa-docker text-2xl mb-2 text-aurora-green"></i>
+                <i class="fab fa-node-js text-2xl mb-2 text-aurora-green"></i>
                 <p>Node.js</p>
               </div>
               <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                <i class="fas fa-chart-pie text-2xl mb-2 text-aurora-blue"></i>
-
+                <i
+                  class="fas fa-layer-group text-2xl mb-2 text-aurora-blue"
+                ></i>
                 <p>NestJS / Express</p>
               </div>
               <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                <i class="fab fa-git text-2xl mb-2 text-aurora-purple"></i>
+                <i class="fas fa-database text-2xl mb-2 text-aurora-purple"></i>
                 <p>PostgreSQL / Prisma</p>
               </div>
               <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                <i class="fas fa-chart-area text-2xl mb-2 text-aurora-pink"></i>
+                <i class="fas fa-plug text-2xl mb-2 text-aurora-pink"></i>
                 <p>APIs REST / JWT</p>
               </div>
             </div>
@@ -530,7 +793,7 @@
                 <p>Docker / Git</p>
               </div>
               <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                <i class="fas fa-cloud text-2xl mb-2 text-aurora-pink"></i>
+                <i class="fas fa-fire text-2xl mb-2 text-aurora-pink"></i>
                 <p>Firebase / Vercel</p>
               </div>
             </div>
